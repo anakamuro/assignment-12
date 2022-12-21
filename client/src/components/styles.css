@@ -1,0 +1,63 @@
+.running {
+  background: url("../../public/assets/logo.png");
+  width: 178px;
+  height: 62px;
+  background-color: black;
+}
+.copy {
+  color: white;
+  background-color: black;
+  position: relative;
+  top: 0;
+  left: 0;
+  white-space: nowrap;
+  display: flex;
+  justify-content: flex-end;
+  transform: rotate(-90deg);
+  position: relative;
+  top: 130px;
+  right: -12px;
+}
+.zen {
+  background: url("../../public/assets/iconzen.png");
+  width: 63px;
+  height: 63px;
+  margin-bottom: 1%;
+}
+.dbell {
+  background: url("../../public/assets/icondbell.png");
+  width: 63px;
+  height: 63px;
+  margin-bottom: 1%;
+}
+.swim {
+  background: url("../../public/assets/iconswim.png");
+  width: 63px;
+  height: 63px;
+  margin-bottom: 1%;
+}
+.cycle {
+  background: url("../../public/assets/iconcycle.png");
+  width: 63px;
+  height: 63px;
+  margin-bottom: 1%;
+}
+.sidebar {
+  width: 120px;
+}
+.wrapper {
+background: black;
+height: 912px;
+width: 120px;
+display: flex;
+align-items: center;
+}
+.navlink {
+  padding-bottom: 20px;
+  background-color: black;
+}
+.home {
+  position: relative;
+  left: 20%;
+  top: -800px;
+}

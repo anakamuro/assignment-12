@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { BarChart, Bar, ResponsiveContainer, XAxis, YAxis, Tooltip } from 'recharts';
+import { BarChart, CartesianGrid, Bar, ResponsiveContainer, XAxis, YAxis, Tooltip, Legend } from 'recharts';
 
 function Activity() {
   const [post, setPost] = useState({});
@@ -20,14 +20,7 @@ function Activity() {
     fetchPosts()
   }, []);
 
-  const data = [
-    {
-      name: 'Page A',
-      uv: 4000,
-      pv: 2400,
-      amt: 2400,
-    },
-  ]
+  
 
 
 
@@ -36,13 +29,16 @@ function Activity() {
 
   return (
     <div>
+       <div className="act">Daily activity</div>
       <ResponsiveContainer width="50%" aspect={3}>
         <BarChart className="bar" width={1000} height={600} data={post.sessions}>
+        <CartesianGrid stroke="#ccc" />
           <XAxis dataKey="day" />
           <YAxis />
           <Tooltip />
           <Bar dataKey="kilogram" fill="black" />
           <Bar dataKey="calories" fill="red" />
+          <Legend/>
         </BarChart>
       </ResponsiveContainer>
     </div>

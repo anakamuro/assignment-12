@@ -222,10 +222,11 @@ border-radius: 6px;
 }
 .score {
   position: relative;
-  left: 25%;
-  top: -650px;;
-  width: 400px;
-  height: 400px;
+  left: 55%;
+  top: -1650px;;
+  width: 350px;
+  height: 303px;
+  background-color: #FBFBFB;
 }
 .act {
   position: absolute;
@@ -239,4 +240,12 @@ border-radius: 6px;
   font-weight: 500;
   font-family: "Roboto";
   z-index: 2;
+}
+.score2 {
+  position: absolute;
+  left: 57%;
+  top: 760px;
+  z-index: 2;
+  font-size: 15px;
+  font-weight: 500;
 }

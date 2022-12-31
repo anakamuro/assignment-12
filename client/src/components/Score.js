@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Chart from 'react-apexcharts';
+import PropTypes from "prop-types";
 
 
 function Score() {
@@ -72,20 +73,8 @@ function Score() {
   )
 }
 
-// return null
-/*
-<RadialBarChart
-cx="50%" cy="50%" innerRadius="20%" outerRadius="80%" barSize={20} 
-className="score" width={500} height={500} data={dataArray}>
-  <h1>Hello</h1>
-  <RadialBar minAngle={15}
-    // label={{ fill: "#fff" }}
-    stroke="blue" 
-    
-    dataKey="todayScore" />
-</RadialBarChart>
- 
-);*/
-
+Score.propTypes = {
+  todayScorePercent:PropTypes.number
+}
 
 export default Score;

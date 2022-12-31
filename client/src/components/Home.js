@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
+import PropTypes from "prop-types";
 
 function Home() {
   const [post, setPost ] = useState({});
@@ -28,7 +28,12 @@ function Home() {
        <span className="con">Congratulations! You reached yesterday's goal<i className="fa-solid fa-hands-clapping"></i></span>
       </div>
     )
-      
-         
+      }
+
+
+Home.propTypes = {
+  firstName:PropTypes.string,
+  lastName:PropTypes.string,
+  age:PropTypes.number
 }
 export default Home

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import PropTypes from "prop-types";
 
 
 function Key() {
@@ -64,7 +65,13 @@ function Key() {
         </div>
       </div>
     )
-      
-         
+}
+
+
+Key.propTypes = {
+  calorieCount:PropTypes.number,
+  proteinCount:PropTypes.number,
+  carbohydrateCount:PropTypes.number,
+  lipidCount:PropTypes.number
 }
 export default Key

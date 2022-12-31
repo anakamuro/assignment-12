@@ -1,6 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
-import { Line, LineChart, YAxis, XAxis, Tooltip, Legend } from 'recharts';
+import { Line, LineChart, YAxis, XAxis, Tooltip } from 'recharts';
+import PropTypes from "prop-types";
 
 function Session() {
   const [post, setPost] = useState({});
@@ -34,6 +35,10 @@ function Session() {
   )
 }
 
+Session.propTypes = {
+  day:PropTypes.number,
+  sessionLength:PropTypes.number
+}
 
 
 export default Session

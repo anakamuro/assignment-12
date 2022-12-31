@@ -1,6 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { BarChart, CartesianGrid, Bar, ResponsiveContainer, XAxis, YAxis, Tooltip, Legend } from 'recharts';
+import PropTypes from "prop-types";
 
 function Activity() {
   const [post, setPost] = useState({});
@@ -45,6 +46,15 @@ function Activity() {
   )
 }
 
-
+Activity.propTypes = {
+  day:PropTypes.string, 
+  sessions:PropTypes.arrayOf(PropTypes.shape(
+  {
+    day:PropTypes.number, 
+    kilogram:PropTypes.number,
+    calories:PropTypes.number
+  }
+))
+}
 
 export default Activity

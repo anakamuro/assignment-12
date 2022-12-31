@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis } from 'recharts';
+import PropTypes from "prop-types";
 
 
 function Types() {
@@ -72,5 +73,9 @@ function Types() {
   }
 }
 
+Types.propTypes = {
+  value:PropTypes.number,
+  kind:PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+}
 
 export default Types;

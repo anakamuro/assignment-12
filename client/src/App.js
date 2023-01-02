@@ -5,7 +5,7 @@ import Home from "./components/Home"
 import Activity from "./components/Activity"
 import {BrowserRouter as Router} from "react-router-dom";
 import Session from './components/Session';
-import Types from "./components/Types";
+import Rader from "./components/Rader";
 import Key from "./components/Key";
 import Score from "./components/Score"
 
@@ -20,7 +20,7 @@ function App() {
       <Home/>
       <Activity/>
       <Session/>
-      <Types/>
+      <Rader/>
       <Key/>
       <Score/>
       </Router> 

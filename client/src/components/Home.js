@@ -1,39 +1,34 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import PropTypes from "prop-types";
+import { fetchPosts } from '../service/service';
 
-function Home() {
-  const [post, setPost ] = useState({});
-  
-
-  useEffect(()=> {
-    fetchPosts()
-  }, []);
-
-  const fetchPosts = () => {
-    let x = 12
-    fetch(`http://localhost:3001/user/${x}`)
-      .then((response) => response.json())
-      .then((response) => {
-        console.log(response.data)
-        setPost(response.data)
-      })
+class Home extends React.Component {
+  state = {
+    posts: []
   }
 
-  
+  componentDidMount() {
+
+    fetchPosts()
+      .then(res => { console.log( res); this.setState({ posts: res.data }) })
+      .catch(err => console.log(err));
+  }
+
+  render() {
     return (
       <div className="home">
         <div>
-        Hello, <span className="name">{post.userInfos?.firstName}</span><span className="name2"> {post.userInfos?.lastName}, </span><span className="age">  Age: {post.userInfos?.age}</span><br/>
+          Hello, <span className="name">{this.state.posts.userInfos?.firstName}</span><span className="name2"> {this.state.posts.userInfos?.lastName}, </span><span className="age">  Age: {this.state.posts.userInfos?.age}</span><br />
         </div>
-       <span className="con">Congratulations! You reached yesterday's goal<i className="fa-solid fa-hands-clapping"></i></span>
+        <span className="con">Congratulations! You reached yesterday's goal<i className="fa-solid fa-hands-clapping"></i></span>
       </div>
     )
-      }
-
+  }
+}
 
 Home.propTypes = {
-  firstName:PropTypes.string,
-  lastName:PropTypes.string,
-  age:PropTypes.number
+  firstName: PropTypes.string,
+  lastName: PropTypes.string,
+  age: PropTypes.number
 }
 export default Home

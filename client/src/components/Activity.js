@@ -1,38 +1,30 @@
 
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { BarChart, CartesianGrid, Bar, ResponsiveContainer, XAxis, YAxis, Tooltip, Legend } from 'recharts';
 import PropTypes from "prop-types";
+import { fetchActivity } from '../service/service';
 
-function Activity() {
-  const [post, setPost] = useState({});
 
-  function fetchPosts() {
-    fetch(`http://localhost:3001/user/12/activity`)
-      .then((response) => response.json())
-      .then((response) => {
-        console.log(response.data)
-        setPost(response.data)
-      }).catch(e => {
-        console.log('error,', e)
-      })
-  }
 
-  useEffect(() => {
-    fetchPosts()
-  }, []);
-
+  class Activity extends React.Component {
+    state = {
+      posts: []
+    }
   
-
-
-
+    componentDidMount() {
+  
+      fetchActivity()
+        .then(res => { console.log( res); this.setState({ posts: res.data }) })
+        .catch(err => console.log(err));
+    }
   // { day: '2020-07-01', kilogram: 80, calories: 240 }
   
-
+  render(){
   return (
     <div>
        <div className="act">Daily activity</div>
       <ResponsiveContainer width="50%" aspect={3}>
-        <BarChart className="bar" width={1000} height={600} data={post.sessions}>
+        <BarChart className="bar" width={1000} height={600} data={this.state.posts.sessions}>
         <CartesianGrid stroke="#ccc" />
           <XAxis dataKey="day" />
           <YAxis />
@@ -45,6 +37,7 @@ function Activity() {
     </div>
   )
 }
+  }
 
 Activity.propTypes = {
   day:PropTypes.string, 

@@ -3,5 +3,9 @@
     "@fortawesome/fontawesome-svg-core": "^6.2.1",
     "rechart": "^0.0.1",
     "recharts": "^2.2.0"
+  },
+  "devDependencies": {
+    "better-docs": "^2.7.2",
+    "jsdoc": "^4.0.0"
   }
 }

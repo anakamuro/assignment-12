@@ -1,8 +1,15 @@
+let userId = 12;
+
+/**
+ * 
+ * This function fetches user by id
+ *
+ * @returns {json} - A user data
+ */
 export async function fetchPosts() {
-  let x = 12
   try {
 
-    const response = await fetch(`http://localhost:3001/user/${x}`)
+    const response = await fetch(`http://localhost:3001/user/${userId}/`)
 
 
     return await response.json();
@@ -12,12 +19,15 @@ export async function fetchPosts() {
 
 }
 
-
+/**
+ * it fetches user average session
+ * @returns {json} - User average session json
+ */
 export async function fetchSession() {
   try {
 
     const response = await
-      fetch(`http://localhost:3001/user/12/average-sessions`)
+      fetch(`http://localhost:3001/user/${userId}/average-sessions`)
 
 
     return await response.json();
@@ -27,12 +37,33 @@ export async function fetchSession() {
 
 }
 
-
+/**
+ * it fetches user performance
+ * @returns {json} User performance json
+ */
 export async function fetchPerformance() {
   try {
 
     const response = await
-      fetch(`http://localhost:3001/user/12/performance`)
+      fetch(`http://localhost:3001/user/${userId}/performance`)
+
+
+    return await response.json();
+  } catch (error) {
+    return [];
+  }
+
+}
+
+/**
+ * it fetches user activity
+ * @returns {json} - User activity json
+ */
+export async function fetchActivity() {
+  try {
+
+    const response = await
+      fetch(`http://localhost:3001/user/${userId}/activity`)
 
 
     return await response.json();

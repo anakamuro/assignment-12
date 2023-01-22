@@ -9,7 +9,7 @@ let userId = 12;
 export async function fetchPosts() {
   try {
 
-    const response = await fetch(`http://localhost:3001/user/${userId}/`)
+    const response = await fetch(`http://localhost:8000/user/${userId}/`)
 
 
     return await response.json();
@@ -27,7 +27,7 @@ export async function fetchSession() {
   try {
 
     const response = await
-      fetch(`http://localhost:3001/user/${userId}/average-sessions`)
+      fetch(`http://localhost:8000/user/${userId}/average-sessions`)
 
 
     return await response.json();
@@ -45,7 +45,7 @@ export async function fetchPerformance() {
   try {
 
     const response = await
-      fetch(`http://localhost:3001/user/${userId}/performance`)
+      fetch(`http://localhost:8000/user/${userId}/performance`)
 
 
     return await response.json();
@@ -63,7 +63,7 @@ export async function fetchActivity() {
   try {
 
     const response = await
-      fetch(`http://localhost:3001/user/${userId}/activity`)
+      fetch(`http://localhost:8000/user/${userId}/activity`)
 
 
     return await response.json();

@@ -8,13 +8,13 @@ import { fetchActivity } from '../service/service';
 
   class Activity extends React.Component {
     state = {
-      posts: []
+      sessions: []
     }
   
     componentDidMount() {
   
       fetchActivity()
-        .then(res => { console.log( res); this.setState({ posts: res.data }) })
+        .then(res => { console.log( res); this.setState({ sessions: res.data.sessions }) })
         .catch(err => console.log(err));
     }
   // { day: '2020-07-01', kilogram: 80, calories: 240 }
@@ -24,7 +24,7 @@ import { fetchActivity } from '../service/service';
     <div>
        <div className="act">Daily activity</div>
       <ResponsiveContainer width="50%" aspect={3}>
-        <BarChart className="bar" width={1000} height={600} data={this.state.posts.sessions}>
+        <BarChart className="bar" width={1000} height={600} data={this.state.sessions}>
         <CartesianGrid stroke="#ccc" />
           <XAxis dataKey="day" />
           <YAxis />

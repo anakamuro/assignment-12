@@ -6,13 +6,13 @@ import { fetchSession } from '../service/service';
 
 class Session extends React.Component {
   state = {
-    posts: []
+    sessions: []
   }
 
   componentDidMount() {
 
     fetchSession()
-      .then(res => { console.log(res); this.setState({ posts: res.data }) })
+      .then(res => { console.log(res); this.setState({ sessions: res.data.sessions }) })
       .catch(err => console.log(err));
   }
 
@@ -22,7 +22,7 @@ class Session extends React.Component {
 
       <div className='container-test'>
         <div className='title'> Average spped of your sessions</div>
-        <LineChart className="line" width={350} height={300} data={this.state.posts.sessions}>
+        <LineChart className="line" width={350} height={300} data={this.state.sessions}>
           <XAxis dataKey="day" />
           <YAxis />
           <Tooltip />

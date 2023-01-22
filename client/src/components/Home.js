@@ -4,13 +4,13 @@ import { fetchPosts } from '../service/service';
 
 class Home extends React.Component {
   state = {
-    posts: []
+    userInfos: []
   }
 
   componentDidMount() {
 
     fetchPosts()
-      .then(res => { console.log( res); this.setState({ posts: res.data }) })
+      .then(res => { console.log( res); this.setState({ userInfos: res.data.userInfos }) })
       .catch(err => console.log(err));
   }
 
@@ -18,7 +18,7 @@ class Home extends React.Component {
     return (
       <div className="home">
         <div>
-          Hello, <span className="name">{this.state.posts.userInfos?.firstName}</span><span className="name2"> {this.state.posts.userInfos?.lastName}, </span><span className="age">  Age: {this.state.posts.userInfos?.age}</span><br />
+          Hello, <span className="name">{this.state.userInfos?.firstName}</span><span className="name2"> {this.state.userInfos?.lastName}, </span><span className="age">  Age: {this.state.userInfos?.age}</span><br />
         </div>
         <span className="con">Congratulations! You reached yesterday's goal<i className="fa-solid fa-hands-clapping"></i></span>
       </div>

@@ -6,12 +6,12 @@ import { fetchPosts } from '../service/service';
 
 class Key extends React.Component {
   state = {
-    posts: []
+    keyData: []
   }
 
   componentDidMount() {
     fetchPosts()
-      .then(res => { console.log(res.data.keyData); this.setState({ posts:res.data}) })
+      .then(res => { console.log(res.data.keyData); this.setState({ keyData:res.data.keyData}) })
       .catch(err => console.log(err));
   }
 
@@ -24,7 +24,7 @@ class Key extends React.Component {
             <div className="box"></div>
           </div>.
           <div className="text-box">
-            <span className="text">{this.state.posts?.keyData?.calorieCount}kCal</span>
+            <span className="text">{this.state.keyData?.calorieCount}kCal</span>
             <span className="text2">Calories</span>
           </div>
         </div>
@@ -34,7 +34,7 @@ class Key extends React.Component {
             <div className="box2"></div>
           </div>
           <div className="text-box">
-            <span className="text">{this.state.posts.keyData?.proteinCount}kCal</span> 
+            <span className="text">{this.state.keyData?.proteinCount}kCal</span> 
             <span className="text2">Proteins</span>
           </div>
         </div>
@@ -44,7 +44,7 @@ class Key extends React.Component {
             <div className="box3"></div>
           </div>
           <div className="text-box">
-            <span className="text">{this.state.posts.keyData?.carbohydrateCount}kCal</span>
+            <span className="text">{this.state.keyData?.carbohydrateCount}kCal</span>
             <span className="text2">Carbs</span>
           </div>
         </div>
@@ -54,7 +54,7 @@ class Key extends React.Component {
             <div className="box4"></div>
           </div>
           <div className="text-box">
-            <span className="text">{this.state.posts.keyData?.lipidCount}kCal</span>
+            <span className="text">{this.state.keyData?.lipidCount}kCal</span>
             <span className="text2">Lipids</span>
           </div>
         </div>
